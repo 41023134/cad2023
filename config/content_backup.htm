@@ -3,6 +3,8 @@
 <p>倉儲:<a href="https://github.com/41023134/cad2023">41023134/cad2023</a></p>
 <p>網站:<a class="Link--inTextBlock" href="https://41023134.github.io/cad2023/">https://41023134.github.io/cad2023/</a></p>
 <p></p>
+<h1>Replit</h1>
+<p></p>
 <h1>Wink</h1>
 <h2>pms_wink</h2>
 <p>Perpetual Motion Simulator繪製過程</p>
@@ -32,27 +34,28 @@ var winkVideoData_pms = {
 <h1>s1511</h1>
 <p><strong>如何連線s1511.cycu.org並執行動態網站?</strong></p>
 <p>1.首先要開啟cmd(小黑窗)中執行ssh cad(學號)@s1511.cycu.org</p>
-<p>*若要用可攜中start.bat中的cmd要先將start.bat用編譯器打開並將第三行蓋掉,然後重新啟動。</p>
+<p>  *若要用可攜中start.bat中的cmd要先將start.bat用編譯器打開並將第三行蓋掉,然後重新啟動。</p>
 <p>2.執行完會要你打密碼,密碼在學校Mail2000,10/28的一封s1511.cycu.org 帳號通知信裡。</p>
 <p>3.連線完會進到OpenSSH SSH client的黑窗,再來是要生成ssh的key,在黑框中執行ssh-keygen。</p>
 <p>4.接下來就是要用FileZilla連線s1511.cycu.org將.ssh目錄下的id_rsa.pub拉到本地的目錄中,</p>
-<p>再用編譯器打開,並將內容送入到Github-&gt;Settings-&gt;SSH and GPG keys。</p>
+<p>   再用編譯器打開,並將內容送入到Github-&gt;Settings-&gt;SSH and GPG keys。</p>
 <p>5.然後下載config並用FileZilla送進.ssh目錄下</p>
 <p>6.然後在OpenSSH SSH client中執行以下三個指令:</p>
-<p>1.git config --global user.name "Github帳號名"</p>
-<p>2.git config --global user.email "Github信箱"</p>
-<p>3.git config --global http.proxy http://p4.cycu.org:3128</p>
+<p>   1.git config --global user.name "Github帳號名"</p>
+<p>   2.git config --global user.email "Github信箱"</p>
+<p>   3.git config --global http.proxy http://p4.cycu.org:3128</p>
 <p>7.將遠端Github的倉儲克隆下來,有以下兩種方法:</p>
-<p>1.http協定:git clone --recurse-submodules https://github.com/41023134/cad2023.git</p>
-<p>2.ssh協定:git clone --recurse-submodules git@github.com:41023134/cad2023.git</p>
-<p>*由於克隆的方式不一樣倉儲中.git中的config設定也不同,因為最後是要用ssh推送到Github,</p>
-<p>用https克隆的要將config設定改成ssh的樣子,也就是將<span>https://github.com/41023134/cad2023.git</span></p>
-<p>改成git@github.com:41023134/cad2023.git</p>
+<p>   1.http協定:git clone --recurse-submodules https://github.com/41023134/cad2023.git</p>
+<p>   2.ssh協定:git clone --recurse-submodules git@github.com:41023134/cad2023.git</p>
+<p>  *由於克隆的方式不一樣倉儲中.git中的config設定也不同,因為最後是要用ssh推送到Github,</p>
+<p>   用https克隆的要將config設定改成ssh的樣子,也就是將<span>https://github.com/41023134/cad2023.git</span></p>
+<p>   改成git@github.com:41023134/cad2023.git</p>
 <p>8.再來要下載server.py的檔案用編輯器將自己9開頭的埠號輸入並將檔案用FileZilla送到倉儲目錄下</p>
 <p>9.然後在小黑窗執行cd site-xxxxxxxx移動到倉儲目錄下執行python3 server.py(沒出現東西就算成功)</p>
 <p>10.在firefox或waterfox中執行https:s1511.cycu.org:8xxx</p>
-<p>*若有設定proxy要關掉</p>
-<p></p><h1>Brython</h1>
+<p>  *若有設定proxy要關掉</p>
+<p></p>
+<h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
