@@ -3,16 +3,54 @@
 <p>倉儲:<a href="https://github.com/41023134/cad2023">41023134/cad2023</a></p>
 <p>網站:<a class="Link--inTextBlock" href="https://41023134.github.io/cad2023/">https://41023134.github.io/cad2023/</a></p>
 <p></p>
-<h1>Replit</h1>
-<p>1.先按Create創建一個repl,然後按Import from Github導入cad2023開頭的倉儲</p>
-<p>2.導入倉儲,首先第一件要做的事是在Shell下執行git submodule update --init --recursive,</p>
-<p>目的在於取下cmsite倉儲中子模組的檔案。</p>
-<p>3.然後在Shell下執行pip install flask flask_cors bs4 lxml pelican markdown gevent,</p>
-<p>來安裝cmsimde需要的模組。</p>
-<p>4.切換到主函式main.py並按Run執行。</p>
-<p>5.若要推送到遠端Github,要用Version Control,打上標題然後按Commit All &amp;Push。</p>
+<h1>PMS</h1>
+<p><span>有關磁力吸引的鋼球循環運動系統，電腦輔助設計與實習課程的任務一即可根據此一裝置的設計, 先採用電腦輔助設計軟體, 繪製系統所需的 3D 零組件, 然後轉為 STL 格式, import 進入 CoppeliaSim, 接著根據影片說明, 利用近接感測器控制電磁鐵開關, 設法透過磁力吸引讓鋼球具有足夠動能返回圓形平台.</span></p>
+<p>1.完成一次返回平台(利用接近感測器感測到時，給一個力)<a href="/downloads/perpetual motion simulator1_1.ttt">perpetual motion simulator1_1.ttt</a></p>
+<p>2.完成重複返回平台(利用反方向的Torque阻止重複滾動導致的加速，但球在平台上一直滾動不下來)</p>
+<p><a href="/downloads/perpetual motion simulator1_2.ttt">perpetual motion simulator1_2.ttt</a></p>
+<p><img alt="" height="281" src="/images/螢幕擷取畫面 2023-11-01 214343.png" width="397"/></p>
+<p>3.修改漏斗圖檔(倒角)，解決球在平台不下來的問題，調整第二感測器位置，可多次運行(非永動)</p>
+<p><a href="/downloads/perpetual motion simulator1_3.ttt">perpetual motion simulator1_3.ttt</a></p>
 <p></p>
-<h1>s1511</h1>
+<h1>Wink</h1>
+<h2>pms</h2>
+<p>Perpetual Motion Simulator繪製過程</p>
+<script>
+var winkVideoData_pms = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
+</script>
+<!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData_pms" height="600" muted="true" width="800">
+<source src="./../downloads/pms_wink/pms.mp4" type="video/mp4"/></video></div>
+<p></p>
+<h1>OBS</h1>
+<h2>solidworks</h2>
+<p></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/mwadaU5GAe0?si=JAsdB1dI2x-u8GWt" title="YouTube video player" width="560"></iframe></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/6n68SETLNMs?si=cBO9zdeojOqlfMTS" title="YouTube video player" width="560"></iframe></p>
+<h1>NOTE</h1>
+<h2>Exam</h2>
+<p>在系上 IPv6 網段時, 可以在線上考試主機 <a href="https://exam.cycu.org">https://exam.cycu.org</a> 帳號註冊時段<a href="https://exam.cycu.org/public/code/tce_user_registration.php">進行註冊</a>:</p>
+<p><img alt="" height="211" src="/images/2023_exam_cycu_org_register.png" width="420"/></p>
+<p>其中:</p>
+<p style="padding-left: 30px;">username 請填入學號</p>
+<p style="padding-left: 30px;">email 請使用學號@nfu.edu.tw</p>
+<p style="padding-left: 30px;">選定密碼之前, 請將密碼存入個人手機的備忘錄</p>
+<p style="padding-left: 30px;">password 輸入兩次, 至少包含八個數字與英文字母的組合字串</p>
+<p style="padding-left: 30px;">name 請輸入中文姓名的名字</p>
+<p style="padding-left: 30px;">surname 請輸入中文姓名的姓</p>
+<p style="padding-left: 30px;">groups:</p>
+<p style="padding-left: 60px;">二甲: cad2023a</p>
+<p style="padding-left: 60px;">二乙: cad2023b</p>
+<p style="padding-left: 60px;">一甲: cp 2023a</p>
+<p style="padding-left: 60px;">一乙: cp2023b</p>
+<p style="padding-left: 30px;"></p><h2>s1511</h2>
 <p><strong>如何連線s1511.cycu.org並執行動態網站?</strong></p>
 <p>1.首先要開啟cmd(小黑窗)中執行ssh cad(學號)@s1511.cycu.org</p>
 <p>  *若要用可攜中start.bat中的cmd要先將start.bat用編譯器打開並將第三行蓋掉,然後重新啟動。</p>
@@ -35,39 +73,15 @@
 <p>9.然後在小黑窗執行cd site-xxxxxxxx移動到倉儲目錄下執行python3 server.py(沒出現東西就算成功)</p>
 <p>10.在firefox或waterfox中執行https:s1511.cycu.org:8xxx</p>
 <p>  *若有設定proxy要關掉</p>
-<p></p>
-<h1>PMS</h1>
-<p><span>有關磁力吸引的鋼球循環運動系統，電腦輔助設計與實習課程的任務一即可根據此一裝置的設計, 先採用電腦輔助設計軟體, 繪製系統所需的 3D 零組件, 然後轉為 STL 格式, import 進入 CoppeliaSim, 接著根據影片說明, 利用近接感測器控制電磁鐵開關, 設法透過磁力吸引讓鋼球具有足夠動能返回圓形平台.</span></p>
-<p>1.完成一次返回平台(利用接近感測器感測到時，給一個力)<a href="/downloads/perpetual motion simulator1_1.ttt">perpetual motion simulator1_1.ttt</a></p>
-<p>2.完成重複返回平台(利用反方向的Torque阻止重複滾動導致的加速，但球在平台上一直滾動不下來)</p>
-<p><a href="/downloads/perpetual motion simulator1_2.ttt">perpetual motion simulator1_2.ttt</a></p>
-<p><img alt="" height="281" src="/images/螢幕擷取畫面 2023-11-01 214343.png" width="397"/></p>
-<p>3.修改漏斗圖檔(倒角)，解決球在平台不下來的問題，調整第二感測器位置，可多次運行(非永動)</p>
-<p><a href="/downloads/perpetual motion simulator1_3.ttt">perpetual motion simulator1_3.ttt</a></p>
-<p></p>
-<h1>Wink</h1>
-<h2>pms_wink</h2>
-<p>Perpetual Motion Simulator繪製過程</p>
-<script>
-var winkVideoData_pms = {
-  dataVersion: 1,
-  frameRate: 10,
-  buttonFrameLength: 5,
-  buttonFrameOffset: 2,
-  frameStops: {
-  },
-};
-</script>
-<!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
-<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData_pms" height="600" muted="true" width="800">
-<source src="./../downloads/pms_wink/pms.mp4" type="video/mp4"/></video></div>
-<p></p>
-<h1>OBS</h1>
-<h2>solidworks</h2>
-<p></p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/mwadaU5GAe0?si=JAsdB1dI2x-u8GWt" title="YouTube video player" width="560"></iframe></p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/6n68SETLNMs?si=cBO9zdeojOqlfMTS" title="YouTube video player" width="560"></iframe></p>
-<h1>NOTE</h1>
+<p></p><h2>Replit</h2>
+<p>1.先按Create創建一個repl,然後按Import from Github導入cad2023開頭的倉儲</p>
+<p>2.導入倉儲,首先第一件要做的事是在Shell下執行git submodule update --init --recursive,</p>
+<p>目的在於取下cmsite倉儲中子模組的檔案。</p>
+<p>3.然後在Shell下執行pip install flask flask_cors bs4 lxml pelican markdown gevent,</p>
+<p>來安裝cmsimde需要的模組。</p>
+<p>4.切換到主函式main.py並按Run執行。</p>
+<p>5.若要推送到遠端Github,要用Version Control,打上標題然後按Commit All &amp;Push。</p>
+<h2>網路設定</h2>
 <p>由於電腦輔助設計室某部分套件, 在 IPv4 網路環境下會被防毒軟體偵測到封包異常而封閉網路, 因此以下將 IPv4 網路關閉, 僅使用 IPv6, 並透過雙網路協定支援的代理主機設定, 以便與僅支援 IPv4 的網路主機連線.</p>
 <p>利用隨身碟上的批次檔案進行電腦輔助設計室網路環境設定 (<a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/Ed9GeWN75kJDmWsdXEeEDukBetqQ1g_3tA_PoIY-dHXDgw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&amp;e=e6bNYA">設定影片</a>):</p>
 <p>1_cadlab_network_setup.bat</p>
@@ -123,7 +137,8 @@ Write-Host "IPv6 Gateway: $gateway"</pre>
 <p>下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/Eck0KdLe1uZEk_LJ2tkEf4ABZyW32cmq5WZVl52Fww9C2A?e=i5Dm3t">2023_fall_w7_cadlab_network_setup.7z</a> <span>(需要下載密碼), 必須先放入個人所分配到的 IPv6 位址後, 以管理者身分執行批次檔案, 就能直接完成電腦輔助設計室中電腦的網路連線設定.</span></p>
 <p><span>各學員所分配的固定 IPv6 位址如下:</span></p>
 <p style="padding-left: 30px;">2a 學員展示用 IPv6 位址: 2001:288:6004:17:2023:cada::<a href="https://mde.tw/cadnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/afc0e4d2267199743ac44bc7aeb0c4b195a30abb/generate_cad2023_2a_site_repo.py">班級名單序號</a></p>
-<p><br/>pms &lt;&lt; <a href="/get_page/NOTE/pms.html">Previous</a> <a href="/get_page/NOTE/exam.html">Next</a> &gt;&gt; exam</p><h1>Brython</h1>
+<p><br/>pms &lt;&lt; <a href="/get_page/NOTE/pms.html">Previous</a> <a href="/get_page/NOTE/exam.html">Next</a> &gt;&gt; exam</p>
+<h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
