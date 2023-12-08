@@ -3,7 +3,46 @@
 <p>倉儲:<a href="https://github.com/41023134/cad2023">41023134/cad2023</a></p>
 <p>網站:<a class="Link--inTextBlock" href="https://41023134.github.io/cad2023/">https://41023134.github.io/cad2023/</a></p>
 <p></p>
-<h1>PMS</h1>
+<h1>w12</h1>
+<p>用python程式讀取<a href="/downloads/2a_w12_seat.txt">2a_w12_seat.txt</a>排出座位表(w12.py)：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">file_path = "2a_w12_seat.txt"
+
+with open(file_path, "r", encoding="utf-8") as file:
+    lines = file.readlines()
+
+seat_map = {}
+
+for line in lines:
+    elements = line.split("\t")
+
+    if len(elements) == 2 and "(" in elements[1]:
+        stud_num = elements[0].strip()
+        seat_info = elements[1].strip()
+        seat_map[stud_num] = seat_info
+
+sorted_seats = sorted(seat_map.items(), key=lambda x: (int(x[1][1]), int(x[1][3])))
+
+max_row = max(int(seat[1][1]) for seat in sorted_seats)
+max_col = max(int(seat[1][3]) for seat in sorted_seats)
+
+seat_table = [["" for _ in range(max_col)] for _ in range(max_row)]
+
+# 填充座位表
+for stud_num, seat_info in sorted_seats:
+    row = int(seat_info[1]) - 1
+    col = int(seat_info[3]) - 1
+    seat_table[row][col] = stud_num
+
+# 檢查每一排座位，補足不足的座位位置
+for row in seat_table:
+    for i in range(9):
+        if i &gt;= len(row) or row[i] == "":
+            row[i] = "        "
+
+# 輸出座位表
+for row in seat_table:
+    print("\t".join(row))</pre>
+<p></p><h1>PMS</h1>
 <p><span>有關磁力吸引的鋼球循環運動系統，電腦輔助設計與實習課程的任務一即可根據此一裝置的設計, 先採用電腦輔助設計軟體, 繪製系統所需的 3D 零組件, 然後轉為 STL 格式, import 進入 CoppeliaSim, 接著根據影片說明, 利用近接感測器控制電磁鐵開關, 設法透過磁力吸引讓鋼球具有足夠動能返回圓形平台.</span></p>
 <p>1.完成一次返回平台(利用接近感測器感測到時，給一個力)<a href="/downloads/perpetual motion simulator1_1.ttt">perpetual motion simulator1_1.ttt</a></p>
 <p>2.完成重複返回平台(利用反方向的Torque阻止重複滾動導致的加速，但球在平台上一直滾動不下來)</p>
@@ -47,9 +86,7 @@ var winkVideoData_pms = {
 <p style="padding-left: 30px;">surname 請輸入中文姓名的姓</p>
 <p style="padding-left: 30px;">groups:</p>
 <p style="padding-left: 60px;">二甲: cad2023a</p>
-<p style="padding-left: 60px;">二乙: cad2023b</p>
-<p style="padding-left: 60px;">一甲: cp 2023a</p>
-<p style="padding-left: 60px;">一乙: cp2023b</p>
+<p style="padding-left: 60px;"></p>
 <p style="padding-left: 30px;"></p><h2>s1511</h2>
 <p><strong>如何連線s1511.cycu.org並執行動態網站?</strong></p>
 <p>1.首先要開啟cmd(小黑窗)中執行ssh cad(學號)@s1511.cycu.org</p>
