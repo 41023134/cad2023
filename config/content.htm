@@ -43,7 +43,21 @@ for row in seat_table:
 for row in seat_table:
     print("\t".join(row))</pre>
 <p></p>
-<h2>網路設定</h2><h1>PMS</h1>
+<h2>網路設定</h2>
+<script>
+var winkVideoData = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
+</script>
+<!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData" height="600" muted="true" width="800">
+<source src="./../downloads/w12internet_set/w12internet_set.mp4"/></video></div>
+<p></p><h1>PMS</h1>
 <p><span>有關磁力吸引的鋼球循環運動系統，電腦輔助設計與實習課程的任務一即可根據此一裝置的設計, 先採用電腦輔助設計軟體, 繪製系統所需的 3D 零組件, 然後轉為 STL 格式, import 進入 CoppeliaSim, 接著根據影片說明, 利用近接感測器控制電磁鐵開關, 設法透過磁力吸引讓鋼球具有足夠動能返回圓形平台.</span></p>
 <p>1.完成一次返回平台(利用接近感測器感測到時，給一個力)<a href="/downloads/perpetual motion simulator1_1.ttt">perpetual motion simulator1_1.ttt</a></p>
 <p>2.完成重複返回平台(利用反方向的Torque阻止重複滾動導致的加速，但球在平台上一直滾動不下來)</p>
@@ -88,7 +102,8 @@ var winkVideoData_pms = {
 <p style="padding-left: 30px;">groups:</p>
 <p style="padding-left: 60px;">二甲: cad2023a</p>
 <p style="padding-left: 60px;"></p>
-<p style="padding-left: 30px;"></p><h2>s1511</h2>
+<p style="padding-left: 30px;"></p>
+<h2>s1511</h2>
 <p><strong>如何連線s1511.cycu.org並執行動態網站?</strong></p>
 <p>1.首先要開啟cmd(小黑窗)中執行ssh cad(學號)@s1511.cycu.org</p>
 <p>  *若要用可攜中start.bat中的cmd要先將start.bat用編譯器打開並將第三行蓋掉,然後重新啟動。</p>
@@ -111,7 +126,8 @@ var winkVideoData_pms = {
 <p>9.然後在小黑窗執行cd site-xxxxxxxx移動到倉儲目錄下執行python3 server.py(沒出現東西就算成功)</p>
 <p>10.在firefox或waterfox中執行https:s1511.cycu.org:8xxx</p>
 <p>  *若有設定proxy要關掉</p>
-<p></p><h2>Replit</h2>
+<p></p>
+<h2>Replit</h2>
 <p>1.先按Create創建一個repl,然後按Import from Github導入cad2023開頭的倉儲</p>
 <p>2.導入倉儲,首先第一件要做的事是在Shell下執行git submodule update --init --recursive,</p>
 <p>目的在於取下cmsite倉儲中子模組的檔案。</p>
@@ -119,7 +135,7 @@ var winkVideoData_pms = {
 <p>來安裝cmsimde需要的模組。</p>
 <p>4.切換到主函式main.py並按Run執行。</p>
 <p>5.若要推送到遠端Github,要用Version Control,打上標題然後按Commit All &amp;Push。</p>
-<h2>網路設定</h2>
+<h2>Internet Set</h2>
 <p>由於電腦輔助設計室某部分套件, 在 IPv4 網路環境下會被防毒軟體偵測到封包異常而封閉網路, 因此以下將 IPv4 網路關閉, 僅使用 IPv6, 並透過雙網路協定支援的代理主機設定, 以便與僅支援 IPv4 的網路主機連線.</p>
 <p>利用隨身碟上的批次檔案進行電腦輔助設計室網路環境設定 (<a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/Ed9GeWN75kJDmWsdXEeEDukBetqQ1g_3tA_PoIY-dHXDgw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&amp;e=e6bNYA">設定影片</a>):</p>
 <p>1_cadlab_network_setup.bat</p>

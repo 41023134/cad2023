@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li class='has-children'><a href='w12.html'>w12</a><ul class='dropdown'><li><a href='網路設定-1.html'>網路設定-1</a></li></ul><li><a href='PMS.html'>PMS</a><li class='has-children'><a href='Wink.html'>Wink</a><ul class='dropdown'><li><a href='pms.html'>pms</a></li></ul><li class='has-children'><a href='OBS.html'>OBS</a><ul class='dropdown'><li><a href='solidworks.html'>solidworks</a></li></ul><li class='has-children'><a href='NOTE.html'>NOTE</a><ul class='dropdown'><li><a href='Exam.html'>Exam</a><li><a href='s1511.html'>s1511</a><li><a href='Replit.html'>Replit</a><li><a href='網路設定-2.html'>網路設定-2</a></li></ul><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='w12.html'>w12</a><ul class='dropdown'><li><a href='網路設定.html'>網路設定</a></li></ul><li><a href='PMS.html'>PMS</a><li class='has-children'><a href='Wink.html'>Wink</a><ul class='dropdown'><li><a href='pms.html'>pms</a></li></ul><li class='has-children'><a href='OBS.html'>OBS</a><ul class='dropdown'><li><a href='solidworks.html'>solidworks</a></li></ul><li class='has-children'><a href='NOTE.html'>NOTE</a><ul class='dropdown'><li><a href='Exam.html'>Exam</a><li><a href='s1511.html'>s1511</a><li><a href='Replit.html'>Replit</a><li><a href='Internet Set.html'>Internet Set</a></li></ul><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,64 +142,21 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Replit << <a href='Replit.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython<br /><h1>網路設定-2</h1>
-<p>由於電腦輔助設計室某部分套件, 在 IPv4 網路環境下會被防毒軟體偵測到封包異常而封閉網路, 因此以下將 IPv4 網路關閉, 僅使用 IPv6, 並透過雙網路協定支援的代理主機設定, 以便與僅支援 IPv4 的網路主機連線.</p>
-<p>利用隨身碟上的批次檔案進行電腦輔助設計室網路環境設定 (<a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/Ed9GeWN75kJDmWsdXEeEDukBetqQ1g_3tA_PoIY-dHXDgw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&amp;e=e6bNYA">設定影片</a>):</p>
-<p>1_cadlab_network_setup.bat</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">echo "disable ipv4 and setup proxy for ipv6"
-SET CurrentDir=%~dp0
-%windir%\system32\reg.exe import %CurrentDir%1_2023_cadlab_network_setup.reg
-powershell -executionpolicy bypass -File %CurrentDir%1_disable_ipv4.ps1
-exit</pre>
-<p>1_2023_cadlab_network_setup.reg</p>
-<p>關閉自動搜尋代理主機, 自行設定代理主機外, 對近端與 NAT 內部 IPv4 網址不使用 proxy server, 若 proxy server 採 domain name 設定則當 IPv4 網路協定啟動時, 亦可透過代理主機連線.</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Windows Registry Editor Version 5.00
-
- [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
- ; disable AutoDetect
-"AutoDetect"=dword:00000000
-"MigrateProxy"=dword:00000001
-; enable Proxy
-"ProxyEnable"=dword:00000001 
-"ProxyHttp1.1"=dword:00000000 
-"ProxyServer"="http://p4.cycu.org:3128"
-"ProxyOverride"="localhost;192.168.1.0/24;&lt;local&gt;"</pre>
-<p>1_disable_ipv4.ps1</p>
-<p>僅啟動 IPv6 網路協定, 且將 dns server 指向 hinet.</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># 關閉 IPv4 網路
-Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip
-  
-# 啟用 IPv6 網路
-Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6
-  
-# 設置 IPv6 網路中的兩個 DNS 伺服器 (hinet)
-$dnsServers = "2001:b000:168::1", "2001:b000:168::2"
-Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
-
-
-# 設定 IPv6 固定位址 (fixed address), 子網路首碼長度 (subnet prefix) 與網路預設閘道 (gateway) 等三個變數
-$ipv6Address = "2001:288:6004:17:請使用個人所分配到的 IPv6 位址"
-$subnetPrefixLength = 64
-$gateway = "2001:288:6004:17::254"
- 
-# 參考 https://serverfault.com/questions/427234/getting-network-interface-device-name-in-powershell
-$query = "SELECT * FROM Win32_NetworkAdapter WHERE Manufacturer != 'Microsoft' AND NOT PNPDeviceID LIKE 'ROOT\\%'"
-$interfaces = Get-WmiObject -Query $query | Sort index
-$interfaces | ForEach{
-    $friendlyname = $_ | ForEach-Object { $_.NetConnectionID }
-    New-NetIPAddress -AddressFamily "IPv6" -InterfaceAlias $friendlyname -IPAddress $ipv6Address -PrefixLength $subnetPrefixLength -DefaultGateway $gateway
-}
-
- 
-# 列出所使用的 IPv6 網路通訊協定內容
-Write-Host "IPv6 Address: $ipv6Address/$subnetPrefixLength"
-Write-Host "IPv6 Gateway: $gateway"</pre>
-<p>下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EU-PdLegiEFAoTlO_yKCXTcB6iUdp0beiWj-9_DIWMoSgQ?e=qCEtYU">cad2023_network_setup.7z</a> (需要下載密碼), 必須以管理者身分執行批次檔案, 因為要藉此身分關閉 IPv4 網路協定.</p>
-<p>下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/Eck0KdLe1uZEk_LJ2tkEf4ABZyW32cmq5WZVl52Fww9C2A?e=i5Dm3t">2023_fall_w7_cadlab_network_setup.7z</a> <span>(需要下載密碼), 必須先放入個人所分配到的 IPv6 位址後, 以管理者身分執行批次檔案, 就能直接完成電腦輔助設計室中電腦的網路連線設定.</span></p>
-<p><span>各學員所分配的固定 IPv6 位址如下:</span></p>
-<p style="padding-left: 30px;">2a 學員展示用 IPv6 位址: 2001:288:6004:17:2023:cada::<a href="https://mde.tw/cadnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/afc0e4d2267199743ac44bc7aeb0c4b195a30abb/generate_cad2023_2a_site_repo.py">班級名單序號</a></p>
-<p><br/>pms &lt;&lt; <a href="/get_page/NOTE/pms.html">Previous</a> <a href="/get_page/NOTE/exam.html">Next</a> &gt;&gt; exam</p>
-<br />Replit << <a href='Replit.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
+    <div id="tipue_search_content">w12 << <a href='w12.html'>Previous</a> <a href='PMS.html'>Next</a> >> PMS<br /><h1>網路設定</h1>
+<script>
+var winkVideoData = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
+</script>
+<!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData" height="600" muted="true" width="800">
+<source src="./../downloads/w12internet_set/w12internet_set.mp4"/></video></div>
+<p></p><br />w12 << <a href='w12.html'>Previous</a> <a href='PMS.html'>Next</a> >> PMS</div>
         
     <!-- footer -->
       <div class="container">
